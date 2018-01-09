@@ -18,7 +18,12 @@ PRODUCT_COPY_FILES := \
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml 
+    ims_ext_common.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
