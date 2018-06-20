@@ -1,6 +1,6 @@
 DEVICE_PATH := device/realme/RMX1831
 BOARD_VENDOR := realme
-
+BUILD_BROKEN_DUP_RULES := true
 # Assertions
 TARGET_OTA_ASSERT_DEVICE := RMX1831 
 
