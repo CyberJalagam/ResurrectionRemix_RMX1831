@@ -65,3 +65,6 @@ on fs
     # Override vendor fstab again because things like Magisk will re-bind /vendor
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
 
+on post-fs
+    # Override stock libmtk-ril.so with Hex-edited libmtk-ril.so to fix incoming calls
+    mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
