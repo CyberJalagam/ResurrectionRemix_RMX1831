@@ -12,6 +12,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES := \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
 
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml 
+
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
