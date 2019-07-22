@@ -6,6 +6,9 @@ ro.build.keystore.path=/sdcard/.lii/
 # system.prop for generic sdk
 #
 
+# Graphics
+debug.sf.enable_gl_backpressure=1
+
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
