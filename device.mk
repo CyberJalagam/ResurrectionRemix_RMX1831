@@ -17,5 +17,9 @@ PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771 
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Inherit vendor
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)
