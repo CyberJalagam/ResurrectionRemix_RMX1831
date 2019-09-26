@@ -129,4 +129,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMX1831
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.RMX1831
+    
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)
