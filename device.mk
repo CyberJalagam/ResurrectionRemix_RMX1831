@@ -109,5 +109,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_mediatek_video.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
 
-# Inherit vendor
+# Doze
+PRODUCT_PACKAGES += \
+    RealmeParts
+
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)
