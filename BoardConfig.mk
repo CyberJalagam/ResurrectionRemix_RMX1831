@@ -86,4 +86,7 @@ TARGET_SCREEN_WIDTH := 1080
 # System Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+
 -include vendor/realme/lucifer/BoardConfigVendor.mk
