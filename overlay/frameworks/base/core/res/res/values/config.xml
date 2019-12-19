@@ -237,7 +237,7 @@
          auto-brightness adjustment setting. -->
      <fraction name="config_autoBrightnessAdjustmentMaxGamma">300.0%</fraction>
 
-    <!-- User activity timeout: Maximum screen dim duration as a percentage of screen off timeout.
+     <!-- User activity timeout: Maximum screen dim duration as a percentage of screen off timeout.
     
          This resource is similar to config_maximumScreenDimDuration but the maximum
          screen dim duration is defined as a ratio of the overall screen off timeout
@@ -252,6 +252,11 @@
          dim before the device goes to sleep.
     -->
      <fraction name="config_maximumScreenDimRatio">20.000004%</fraction>
+    
+    <!-- Whether to post reset runnable for all clients. Needed for some >
+         vendor fingerprint HAL implementations. -->
+    <bool name="config_fingerprintPostResetRunnableForAllClients">true</b>
+
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
