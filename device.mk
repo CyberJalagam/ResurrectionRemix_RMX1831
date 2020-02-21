@@ -117,4 +117,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     RealmeParts
 
+# KPOC
+PRODUCT_PACKAGES += \
+    libsuspend
+
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)
