@@ -20,4 +20,5 @@ TARGET_VENDOR_PRODUCT_NAME := RMX1831
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="full_oppo6771_18611-user 9 PPR1.180610.011 eng.root.20191129.130521 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := full_oppo6771_18611-user-9-PPR1.180610.011-eng.root.20191129.130521-release-keys
+BUILD_FINGERPRINT := google/coral/coral:10/QQ2A.200305.003/6156912:user/release-keys
+
