@@ -88,5 +88,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
+TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
+
 
 -include vendor/realme/lucifer/BoardConfigVendor.mk
