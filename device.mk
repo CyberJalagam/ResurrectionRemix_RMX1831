@@ -4,7 +4,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -32,7 +31,8 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
-    fstab.mt6771 
+    fstab.mt6771 \
+    init.safailnet.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
