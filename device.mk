@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# KPOC
+ PRODUCT_PACKAGES += \
+     libsuspend
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
