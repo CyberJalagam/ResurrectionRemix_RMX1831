@@ -5,6 +5,11 @@ on init
     # without framework support it creates all sorts of problems. Disable it.
     setprop persist.vendor.mtk.volte.enable 0
     setprop persist.vendor.mtk_ct_volte_support 0
+    
+    # Custom overrides that need to happen right on boot
+    # Override vendor fstab
+    # We only need it to be overridden before things are mounted
+    mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
 
 service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
     class main
