@@ -4,37 +4,37 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in"
-# 122 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in"
-/dev/block/platform/bootdevice/by-name/system / ext4 ro wait,verify,recoveryonly,async_discard
+# 133 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in"
+/dev/block/platform/bootdevice/by-name/system / ext4 ro wait,verify,recoveryonly
 
-/dev/block/platform/bootdevice/by-name/vendor /vendor ext4 ro wait,verify,recoveryonly,async_discard
-
-
-
-
-/dev/block/platform/bootdevice/by-name/odm /odm ext4 ro wait,recoveryonly
+/dev/block/platform/bootdevice/by-name/vendor /vendor ext4 ro wait,verify,recoveryonly
 
 
 
 
-
-/dev/block/platform/bootdevice/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard wait,check,formattable
-
-/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,async_discard wait,check,formattable,quota,resize,reservedsize=128m,forcefdeorfbe=/dev/block/platform/bootdevice/by-name/metadata
+/dev/block/platform/bootdevice/by-name/odm /odm ext4 ro wait,verify,recoveryonly
 
 
 
 
 
+/dev/block/platform/bootdevice/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check,formattable
+
+/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic wait,check,formattable,quota,resize,reservedsize=128m,fileencryption=aes-256-xts
 
 
-/dev/block/platform/bootdevice/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
-/dev/block/platform/bootdevice/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
-/dev/block/platform/bootdevice/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard wait,check,formattable
-/dev/block/platform/bootdevice/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
 
 
-/dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
+
+
+
+/dev/block/platform/bootdevice/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/platform/bootdevice/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/platform/bootdevice/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check,formattable
+/dev/block/platform/bootdevice/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc  wait,check,formattable
+
+
+/dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
 
 
 
