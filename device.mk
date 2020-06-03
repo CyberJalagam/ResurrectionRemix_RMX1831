@@ -45,5 +45,54 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    gralloc.default \
+    libhwc2on1adapter \
+    libhwc2onfbadapter
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey \
+    android.hardware.drm@1.1-service.widevine
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-service.override
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-service \
+    android.hardware.vibrator@1.0-impl
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
+
+#WiFi
+PRODUCT_PACKAGES += \
+    hostapd \
+    libwpa_client \
+    libwifi-hal \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+# Trust
+PRODUCT_PACKAGES += \
+    lineage.trust@1.0-service
+
 # Inherit vendor
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)
