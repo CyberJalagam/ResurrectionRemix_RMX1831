@@ -11,6 +11,12 @@ on init
     # We only need it to be overridden before things are mounted
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
 
+    # Override codec config
+    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
+
+on post-fs
+	mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
+
 service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
     class main
     user root
@@ -75,3 +81,8 @@ on fs
 on post-fs
     # Override stock libmtk-ril.so with Hex-edited libmtk-ril.so to fix incoming calls
     mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
+
+on zygote-start
+
+    # Override codec config again in case of Magisk
+    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
