@@ -5,6 +5,9 @@ BUILD_BROKEN_DUP_RULES := true
 # Assertions
 TARGET_OTA_ASSERT_DEVICE := RMX1831 RMX1833
 
+# system-as-root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
