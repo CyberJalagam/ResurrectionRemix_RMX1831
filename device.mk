@@ -35,7 +35,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771 \
-    init.safailnet.rc
+    init.safailnet.rc \
+    init.recovery.mt6771.rc \
+    init.recovery.usb.rc
 
 # Input Configs
 PRODUCT_COPY_FILES += \
