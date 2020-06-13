@@ -90,6 +90,9 @@ ro.mtk_perf_response_time=1
 # disable ipo for development
 sys.ipo.disable=1
 
+# Camera
+persist.camera.HAL3.enabled=1
+ 
 #ifdef VENDOR_EDIT
 #Caohua,Lin@Camera, 2018/12/25 Skip raw input format check for whitelisted apps */
 persist.vendor.camera.privapp.list = com.oppo.camera
