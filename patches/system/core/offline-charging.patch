@@ -1,0 +1,28 @@
+diff --git rootdir/init.rc rootdir/init.rc
+index b1c7da2..2fa6216 100644
+--- rootdir/init.rc
++++ rootdir/init.rc
+@@ -11,6 +11,11 @@ import /vendor/etc/init/hw/init.${ro.hardware}.rc
+ import /init.usb.configfs.rc
+ import /init.${ro.zygote}.rc
+ 
++service charger /charger
++    class charger
++    group system shell input graphics
++    seclabel u:r:charger:s0
++
+ # Cgroups are mounted right before early-init using list from /etc/cgroups.json
+ on early-init
+     # Disable sysrq from keyboard
+@@ -768,6 +773,11 @@ on nonencrypted
+ on property:sys.init_log_level=*
+     loglevel ${sys.init_log_level}
+ 
++on charger && property:ro.hardware=mt*
++    write /sys/class/leds/lcd-backlight/trigger "backlight"
++    write /sys/class/android_usb/android0/enable 1
++
++
+ on charger
+     class_start charger
+ 
