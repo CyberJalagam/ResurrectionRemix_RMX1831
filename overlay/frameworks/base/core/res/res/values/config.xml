@@ -250,7 +250,7 @@
     
     <!-- Whether to post reset runnable for all clients. Needed for some >
          vendor fingerprint HAL implementations. -->
-    <bool name="config_fingerprintPostResetRunnableForAllClients">true</b>
+    <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
