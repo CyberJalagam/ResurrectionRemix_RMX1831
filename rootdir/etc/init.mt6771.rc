@@ -11,12 +11,6 @@ on init
     # We only need it to be overridden before things are mounted
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
 
-    # Override codec config
-    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
-
-on post-fs
-	mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
-
 service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
     class main
     user root
@@ -90,7 +84,3 @@ on post-fs
     mount none /dev/null vendor/lib64/hw/android.hardware.light@2.0-impl-mediatek.so bind
     mount none /dev/null vendor/etc/init/android.hardware.light@2.0-service-mediatek.rc bind
 
-on zygote-start
-
-    # Override codec config again in case of Magisk
-    mount none /system/etc/media_codecs_mediatek_video.xml /vendor/etc/media_codecs_mediatek_video.xml bind
