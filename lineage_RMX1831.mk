@@ -9,7 +9,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit from RMX1831 device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, device/realme/RMX1831/device.mk)
 
 PRODUCT_BRAND := realme
 PRODUCT_DEVICE := RMX1831
@@ -20,8 +20,8 @@ PRODUCT_MODEL := realme U1
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 TARGET_VENDOR := realme
 TARGET_VENDOR_PRODUCT_NAME := RMX1831
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="full_oppo6771_18611-user 9 PPR1.180610.011 eng.root.20191129.130521 release-keys"
+PRIVATE_BUILD_DESC="coral-user 10 QQ3A.200605.001 6392402 release-keys"
+    
+BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys"
 
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/coral/coral:10/QQ2A.200305.003/6156912:user/release-keys
 

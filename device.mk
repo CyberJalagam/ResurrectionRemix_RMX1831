@@ -12,12 +12,24 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default
+
+# Audio policy configuration
+USE_XML_AUDIO_POLICY_CONF := 1
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.secure_lock_screen.xml \
     $(LOCAL_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
+
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
@@ -30,32 +42,40 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
 
+# Misc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/misc/factory.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/factory.ini \
+    $(LOCAL_PATH)/misc/custom.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/custom.conf
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771 \
     init.safailnet.rc \
     init.recovery.mt6771.rc \
-    init.recovery.usb.rc
+    init.recovery.usb.rc \
+    set_zram.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml
 
-# Input Configs
+# Keyboard layout
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/input/idc/AVRCP.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/AVRCP.idc \
-	$(LOCAL_PATH)/input/keylayout/ACCDET.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/ACCDET.kl \
-	$(LOCAL_PATH)/input/keylayout/AVRCP.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/AVRCP.kl \
-	$(LOCAL_PATH)/input/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl
+    $(LOCAL_PATH)/keylayout/ACCDET.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/ACCDET.kl \
+    $(LOCAL_PATH)/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl
+
+# Input/DT2W
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/touchpanel.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/touchpanel.kl
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
 
 # Display
 PRODUCT_PACKAGES += \
@@ -115,17 +135,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
-# Offline charger
+# Symbols 
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
+    libshim_showlogo
 
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMX1831
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX1831
     
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 $(call inherit-product, vendor/realme/lucifer/lucifer-vendor.mk)

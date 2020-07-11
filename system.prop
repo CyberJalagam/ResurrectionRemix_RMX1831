@@ -44,43 +44,16 @@ wifi.direct.interface=p2p0
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
 
-# Power off opt in IPO
-sys.ipo.pwrdncap=2
+# Pixel identification
+ro.build.fingerprint=google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys
 
-ro.sys.usb.storage.type=mtp
+# Camera
+persist.camera.HAL3.enabled=1
 
-# USB BICR function
-ro.sys.usb.bicr=no
-
-# USB Charge only function
-ro.sys.usb.charging.only=yes
-
-# audio
-ro.camera.sound.forced=0
-ro.audio.silent=0
-
-ro.zygote.preload.enable=0
-
-# temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=0
-
-ro.kernel.zio=38,108,105,16
-#ro.kernel.qemu=1
-#ro.kernel.qemu.gles=0
-#ro.boot.selinux=disable
-
-# Disable dirty region for Mali
-#debug.hwui.render_dirty_regions=false
-
-#ifdef VENDOR_EDIT
-#Haibing.Wang@AD.CTS,2018/11/13, Add for GSI can not find ro.sf.lcd_density
-#ro.sf.lcd_density=480
-#endif
-
-#ifdef VENDOR_EDIT
-#Jinzhu.Han@MM.Display.Service.Feature, 2019/04/18, add for Cutout
-ro.oppo.screen.heteromorphism=444,0:636,76
-#endif
+# Graphics
+debug.sf.enable_gl_backpressure=1
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
 
 # performance
 ro.mtk_perf_simple_start_win=1
@@ -90,9 +63,6 @@ ro.mtk_perf_response_time=1
 # disable ipo for development
 sys.ipo.disable=1
 
-# Camera
-persist.camera.HAL3.enabled=1
- 
 # Video Acceleration Enabled And HW debugging
 video.accelerate.hw=1
 debug.sf.hw=1
@@ -101,9 +71,12 @@ debug.egl.profiler=1
 debug.egl.hw=1
 debug.composition.type=gpu 
 
-#ifdef VENDOR_EDIT
-#Caohua,Lin@Camera, 2018/12/25 Skip raw input format check for whitelisted apps */
-persist.vendor.camera.privapp.list = com.oppo.camera
-#endif
+# LCD density
+ro.sf.lcd_density=480
 
-#
+# Granular Volume Steps
+ro.config.vc_call_vol_steps=7
+ro.config.alarm_vol_steps=15
+ro.config.system_vol_steps=15
+ro.config.ring_notification_vol_steps=15
+
