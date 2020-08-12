@@ -80,3 +80,6 @@ ro.config.alarm_vol_steps=15
 ro.config.system_vol_steps=15
 ro.config.ring_notification_vol_steps=15
 
+#Enable Surface Flinger
+PRODUCT_PROPERTY_OVERRIDES += \ 
+debug.sf.latch_unsignaled=1
