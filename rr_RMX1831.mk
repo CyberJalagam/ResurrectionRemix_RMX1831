@@ -27,4 +27,5 @@ BUILD_FINGERPRINT := ""google/walleye/walleye:11/RP1A.201005.004/6782484:user/re
 
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-
+# RR Wallpaper
+BUILD_RR_WALLPAPERS:= true
