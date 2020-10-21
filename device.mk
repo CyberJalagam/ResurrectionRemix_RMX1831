@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    GCam
 
 # Fingerprint
 PRODUCT_PACKAGES += \
