@@ -29,5 +29,9 @@
     <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>    
     <!-- FPS node path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/module/primary_display/parameters/display_framerate_main</string>
+    
+    <!-- Doze: does this device support STATE_DOZE?  -->
 
+    <bool name="doze_display_state_supported">true</bool>
+     
 </resources>
